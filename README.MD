@@ -1,7 +1,7 @@
 # Reservoir
 Code for reservoir computing.
 
-![](Reservoir.png)
+<img src="imgs/Reservoir.png" style="height: 300px;"/>
 
 ## Usage
 
@@ -10,14 +10,17 @@ The reservoir is constructed by the parameters defined in `reservoir.config`, wh
 ```JSON
 {
     "input": {
-        "nodes": 1,
-        "function": "lambda x: np.sin(128 * np.pi * x)",
-        "length": 10000
+        "nodes": 2,
+        "functions": [
+            "lambda x: np.sin(128 * np.pi * x)",
+            "lambda x: x"
+        ],
+        "length": 5000
     },
     "reservoir": {
-        "start_node": 30,
-        "end_node": 30,
-        "step": 1,
+        "start_node": 100,
+        "end_node": 100,
+        "step": 2,
         "degree_function": "lambda x: np.sqrt(x)",
         "sigma": 0.5,
         "bias": 1,
@@ -25,7 +28,7 @@ The reservoir is constructed by the parameters defined in `reservoir.config`, wh
         "regression_parameter": 1e-08
     },
     "output": {
-        "nodes": 1
+        "nodes": 2
     },
     "training": {
         "init": 1000,
@@ -36,6 +39,17 @@ The reservoir is constructed by the parameters defined in `reservoir.config`, wh
 }
 ```
 
-The result will be gathered in the file `reservoir.output`, you can visualize it by running `./visualize.py reservoir.output`.
+It will generate the prediction.
 
-![](visualize.png)
+For one single signal input:  
+<img src="imgs/1signal.png" style="height: 300px;"/>
+
+For two signals input:   
+<img src="imgs/2signals.png" style="height: 300px;"/>
+
+
+
+The result will be gathered in the file `reservoir.output`, you can visualize it by running `./visualize.py reservoir.output` or `./visualize3d.py reservoir.output`
+
+<img src="imgs/visualize.png" style="height: 400px;"/>
+<img src="imgs/visualize3d.png" style="height: 400px;"/>
