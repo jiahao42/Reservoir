@@ -41,11 +41,20 @@ The reservoir is constructed by the parameters defined in `reservoir.config`, wh
 
 It will generate the prediction.
 
-For one single signal input:  
+For one single signal input:   
+**sin(t):**   
 <img src="imgs/1signal.png" style="height: 300px;"/>
 
-For two signals input:   
+For two signals input:     
+**sin(t) and t:**    
 <img src="imgs/2signals.png" style="height: 300px;"/>
+
+For three singals input:   
+**Lorenz System:**   
+<img src="imgs/Lorenz_400_20.png" style="height: 300px;"/>
+
+**Rössler System:**    
+<img src="imgs/rossler_400_sqrt.png" style="height: 300px;"/>
 
 
 
